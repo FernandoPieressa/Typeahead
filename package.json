@@ -4,7 +4,8 @@
   "description": "## Description",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/matilda-applicants/typeahead-backend-FernandoPieressa#readme",
   "devDependencies": {
+    "eslint": "^7.9.0",
     "nodemon": "^2.0.4"
   },
   "dependencies": {

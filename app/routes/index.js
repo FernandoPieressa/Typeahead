@@ -1,5 +1,5 @@
 const typeaheadRoutes = require('./typeahead_routes');
 
-module.exports = function(app, db) {
-	typeaheadRoutes(app, db);
+module.exports = function(app) {
+	typeaheadRoutes(app);
 }
