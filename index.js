@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const trie_setup = require('./app/commands/trie')
+const trie_setup = require('./app/models/trie')
 
 const app = express();
 

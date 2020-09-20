@@ -1,4 +1,4 @@
-const typeaheadRoutes = require('./typeahead_routes');
+const typeaheadRoutes = require('./typeahead.routes');
 
 module.exports = function(app) {
 	typeaheadRoutes(app);
