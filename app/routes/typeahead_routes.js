@@ -12,7 +12,7 @@ module.exports = function(app) {
 
 	app.get('/typeahead', (req, res) => {
 		const sorted_array = sort_dict(structure.root.possible_words);
-		res.send(sorted_array.slice(0, 5));
+		res.send(sorted_array.slice(0, process.env.SUGGESTION_NUMBER));
 	})
 
 	app.get('/typeahead/:prefix', (req, res) => {
@@ -26,6 +26,6 @@ module.exports = function(app) {
 		if (popularity) {
 			sorted_array.unshift({ name: word, times: popularity});
 		}
-		res.send(sorted_array.slice(0, 5))
+		res.send(sorted_array.slice(0, process.env.SUGGESTION_NUMBER))
 	})
 }

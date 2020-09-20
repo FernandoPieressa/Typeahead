@@ -4,7 +4,7 @@ const trie_setup = require('./app/commands/trie')
 
 const app = express();
 
-const port = 8000;
+const port = process.env.PORT;
 
 trie_setup()
 
