@@ -1,5 +1,12 @@
 const sort_dict = require('../../helpers/sort_dict');
 
+/**
+ * Gets the most popular names given a specific prefix, and orders it by
+ * popularity. If there is a matching name with prefix it is left as first
+ * element of response.
+ *
+ * @param {string} req.params.prefix - prefix to filter search
+ */
 function get(req, res) {
 	const prefix = req.params.prefix;
 	const {

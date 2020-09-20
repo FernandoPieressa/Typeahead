@@ -1,3 +1,11 @@
+/**
+ * Given a word object of names and popularity, generates a sorted array with
+ * its elements. The sort is by popularity in descending order, and by name in
+ * ascending order if they are equal.
+ *
+ * @param {object} word_dict - object with names and their respective popularity
+ * @returns {array} Sorted array of names and popularity
+ */
 module.exports = function(word_dict) {
 	const sorted_array = [];
 	for (const name in word_dict) {
