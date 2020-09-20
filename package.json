@@ -1,0 +1,28 @@
+{
+  "name": "typeahead",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matilda-applicants/typeahead-backend-FernandoPieressa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matilda-applicants/typeahead-backend-FernandoPieressa/issues"
+  },
+  "homepage": "https://github.com/matilda-applicants/typeahead-backend-FernandoPieressa#readme",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
