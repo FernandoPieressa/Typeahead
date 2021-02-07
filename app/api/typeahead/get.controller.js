@@ -10,17 +10,17 @@ SUGGESTION_NUMBER = process.env.SUGGESTION_NUMBER || 5;
  * @param {string} req.params.prefix - prefix to filter search
  */
 function get(req, res) {
-	const prefix = req.params.prefix;
-	const {
-		word,
-		popularity,
-		possible_words,
-	} = structure.find_word(prefix.toLowerCase());
-	const sorted_array = sortDict(possible_words);
-	if (popularity) {
-		sorted_array.unshift({ name: word, times: popularity });
-	}
-	res.send(sorted_array.slice(0, SUGGESTION_NUMBER))
+  const prefix = req.params.prefix;
+  const {
+    word,
+    popularity,
+    possible_words,
+  } = structure.find_word(prefix.toLowerCase());
+  const sorted_array = sortDict(possible_words);
+  if (popularity) {
+    sorted_array.unshift({ name: word, times: popularity });
+  }
+  res.send(sorted_array.slice(0, SUGGESTION_NUMBER))
 }
 
 module.exports = get;

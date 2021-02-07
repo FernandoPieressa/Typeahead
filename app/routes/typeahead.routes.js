@@ -33,9 +33,9 @@ module.exports = function(app) {
 	*       description: "Bad Request"
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.post('/typeahead', (req, res) => {
-		update(req, res);
-	})
+  app.post('/typeahead', (req, res) => {
+    update(req, res);
+  })
 
 	/**
 	* @swagger
@@ -62,9 +62,9 @@ module.exports = function(app) {
 	*                  { 'name': 'Zena', 'times': 222 }]
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.get('/typeahead', (req, res) => {
-		getAll(req, res);
-	})
+  app.get('/typeahead', (req, res) => {
+    getAll(req, res);
+  })
 
 	/**
 	* @swagger
@@ -96,7 +96,7 @@ module.exports = function(app) {
 	*                  { 'name': 'Zena', 'times': 222 }]
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.get('/typeahead/:prefix', (req, res) => {
-		get(req, res);
-	})
+  app.get('/typeahead/:prefix', (req, res) => {
+    get(req, res);
+  })
 }
