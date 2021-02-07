@@ -1,5 +1,5 @@
 const update = require('../api/typeahead/update.controller');
-const get_all = require('../api/typeahead/get_all.controller');
+const getAll = require('../api/typeahead/get-all.controller');
 const get = require('../api/typeahead/get.controller');
 
 module.exports = function(app) {
@@ -40,11 +40,11 @@ module.exports = function(app) {
 	/**
 	* @swagger
 	* /typeahead/
-	*   post:
-	*     get:
+	*   get:
+	*     tags:
 	*     - "typeahead"
 	*     description: "Obtains the most popular names"
-	*     operationId: "get_all"
+	*     operationId: "getAll"
 	*   responses:
 	*    200:
 	*       description: "Obtained most popular names in decending order"
@@ -63,7 +63,7 @@ module.exports = function(app) {
 	*   x-swagger-router-controller: "typeahead"
 	*/
 	app.get('/typeahead', (req, res) => {
-		get_all(req, res);
+		getAll(req, res);
 	})
 
 	/**

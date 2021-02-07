@@ -12,7 +12,7 @@ function update(req, res) {
 		} else {
 			res.status(201).send(result);
 		}
-	} {
+	} else {
 		res.sendStatus(400);
 	}
 }

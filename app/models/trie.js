@@ -5,7 +5,7 @@ const names = require('../../names');
  * Structure of a node in the Trie
  */
 function TrieNode() {
-	this.child = {};
+	this.children = {};
 	this.popularity = null;
 	this.possible_words = {};
 }
@@ -27,17 +27,17 @@ TrieStructure.prototype.add_word = function(word, popularity) {
 	let node = this.root;
 	for (const c of word) {
 		node.possible_words[word.toLowerCase()] = { popularity, name: word }
-		if (!(c in node.child)) {
-			node.child[c] = new TrieNode();
+		if (!(c in node.children)) {
+			node.children[c] = new TrieNode();
 		}
-		node = node.child[c];
+		node = node.children[c];
 	}
 	delete node.possible_words[word]
 	node.popularity = popularity;
 }
 
 /**
- * Finds a word representing a name in Trie
+ * Finds a word representing a prefix in the Trie
  *
  * @param {string} word - word to search in trie
  * @returns {object} Object with the word in case insensitive format,
@@ -47,14 +47,14 @@ TrieStructure.prototype.find_word = function(word) {
 	let node = this.root;
 	let case_insensitive_word = ''
 	for (const c of word) {
-		if (!(c in node.child) && !(c.toUpperCase() in node.child)) {
+		if (!(c in node.children) && !(c.toUpperCase() in node.children)) {
 			return {};
 		}
-		if (node.child[c]) {
-			node = node.child[c];
+		if (node.children[c]) {
+			node = node.children[c];
 			case_insensitive_word += c;
 		} else{
-			node = node.child[c.toUpperCase()]
+			node = node.children[c.toUpperCase()]
 			case_insensitive_word += c.toUpperCase();
 		}
 	}
@@ -79,7 +79,7 @@ TrieStructure.prototype.update_word = function(word) {
 	const name = node.possible_words[word].name;
 	for (const c of word) {
 		node.possible_words[word].popularity += 1;
-		node = node.child[c] ? node.child[c] : node.child[c.toUpperCase()];
+		node = node.children[c] ? node.children[c] : node.children[c.toUpperCase()];
 	}
 	node.popularity += 1;
 	return { name, times: node.popularity };
