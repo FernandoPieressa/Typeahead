@@ -1,6 +1,6 @@
 const sortDict = require('../../helpers/sort-dict');
 
-SUGGESTION_NUMBER = process.env.SUGGESTION_NUMBER || 5;
+const suggestionNumber = process.env.SUGGESTION_NUMBER || 5;
 
 /**
  * Gets the most popular names given a specific prefix, and orders it by
@@ -20,7 +20,7 @@ function get(req, res) {
   if (popularity) {
     sorted_array.unshift({ name: word, times: popularity });
   }
-  res.send(sorted_array.slice(0, SUGGESTION_NUMBER))
+  res.send(sorted_array.slice(0, suggestionNumber))
 }
 
 module.exports = get;
