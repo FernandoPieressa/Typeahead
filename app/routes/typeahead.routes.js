@@ -1,5 +1,5 @@
 const update = require('../api/typeahead/update.controller');
-const get_all = require('../api/typeahead/get_all.controller');
+const getAll = require('../api/typeahead/get-all.controller');
 const get = require('../api/typeahead/get.controller');
 
 module.exports = function(app) {
@@ -33,18 +33,18 @@ module.exports = function(app) {
 	*       description: "Bad Request"
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.post('/typeahead', (req, res) => {
-		update(req, res);
-	})
+  app.post('/typeahead', (req, res) => {
+    update(req, res);
+  })
 
 	/**
 	* @swagger
 	* /typeahead/
-	*   post:
-	*     get:
+	*   get:
+	*     tags:
 	*     - "typeahead"
 	*     description: "Obtains the most popular names"
-	*     operationId: "get_all"
+	*     operationId: "getAll"
 	*   responses:
 	*    200:
 	*       description: "Obtained most popular names in decending order"
@@ -62,9 +62,9 @@ module.exports = function(app) {
 	*                  { 'name': 'Zena', 'times': 222 }]
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.get('/typeahead', (req, res) => {
-		get_all(req, res);
-	})
+  app.get('/typeahead', (req, res) => {
+    getAll(req, res);
+  })
 
 	/**
 	* @swagger
@@ -96,7 +96,7 @@ module.exports = function(app) {
 	*                  { 'name': 'Zena', 'times': 222 }]
 	*   x-swagger-router-controller: "typeahead"
 	*/
-	app.get('/typeahead/:prefix', (req, res) => {
-		get(req, res);
-	})
+  app.get('/typeahead/:prefix', (req, res) => {
+    get(req, res);
+  })
 }
